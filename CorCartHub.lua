@@ -45,6 +45,13 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "Button!",
 	Callback = function()
+		local Kick
+		Kick = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...)
+		if getnamecallmethod() == "Kick" then
+		return
+		end
+		return Kick(Self, ...)
+		end)
 		if game:IsLoaded() then
 			local New_CFrame = workspace.CartRideWorkspace.Objects.CartGiver.Hitbox.CFrame
 			local ts = game:GetService("TweenService")
