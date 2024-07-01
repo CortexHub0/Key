@@ -66,11 +66,17 @@ Tab:AddButton({
 	end
 })
 
--- Oyun yüklendiğinde çalışacak scriptler
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
+local Kick
+Kick = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...)
+if getnamecallmethod() == "Kick" then
+return
+end
+return Kick(Self, ...)
+end)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/MainProd"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/CodexTest"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/Main"))()
