@@ -46,16 +46,13 @@ Tab:AddButton({
 	Name = "Button!",
 	Callback = function()
 		if game:IsLoaded() then
-			local plr = game.Players.LocalPlayer
-			local hrp = plr.Character:WaitForChild("HumanoidRootPart")
-			for _, level in ipairs(game.Workspace.CartRideWorkspace.Objects:GetChildren()) do
-				if level:FindFirstChild("LevelSpawn") then
-					firetouchinterest(hrp, level.LevelSpawn, 0)
-					wait()
-					firetouchinterest(hrp, level.LevelSpawn, 1)
-				end
-			end
-			plr.Character:FindFirstChildOfClass("Humanoid").Health = 0
+			local New_CFrame = workspace.CartRideWorkspace.Objects.CartGiver.Hitbox.CFrame
+			local ts = game:GetService("TweenService")
+			local char = game.Players.LocalPlayer.Character
+			local part = char.HumanoidRootPart
+			local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+			local tp = {CFrame = New_CFrame}
+			ts:Create(part, ti, tp):Play()
 		end
 		OrionLib:MakeNotification({
 			Name = "Title!",
@@ -66,6 +63,7 @@ Tab:AddButton({
 	end
 })
 
+-- Oyun yüklendiğinde çalışacak scriptler
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
