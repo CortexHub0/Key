@@ -21,7 +21,7 @@ Tab:AddToggle({
 			KeyToReleaseRailMagnet = Enum.KeyCode.D
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/Rylvns/EnvisionExploits/master/game-scripts/Create%20a%20Cart%20Ride!/source.lua"))()
 			OrionLib:MakeNotification({
-				Name = "Title!",
+				Name = "MW",
 				Content = "Magnetic wheels activated!",
 				Image = "rbxassetid://4483345998",
 				Time = 5
@@ -39,7 +39,7 @@ Tab:AddToggle({
 })
 
 local Section = Tab:AddSection({
-	Name = "Get cart (instantly)"
+	Name = "Get cart (not instantly)"
 })
 
 Tab:AddButton({
@@ -82,3 +82,5 @@ return
 end
 return Kick(Self, ...)
 end)
+
+OrionLib:Init()
