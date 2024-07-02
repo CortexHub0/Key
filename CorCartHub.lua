@@ -39,27 +39,25 @@ Tab:AddToggle({
 })
 
 local Section = Tab:AddSection({
-	Name = "Get cart (not instantly)"
+	Name = "Get cart (instantly)"
 })
 
 Tab:AddButton({
-	Name = "Button!",
+	Name = "Tp to Cart Giver!",
 	Callback = function()
 		local Kick
 		Kick = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...)
-		if getnamecallmethod() == "Kick" then
-		return
-		end
-		return Kick(Self, ...)
+			if getnamecallmethod() == "Kick" then
+				return
+			end
+			return Kick(Self, ...)
 		end)
 		if game:IsLoaded() then
 			local New_CFrame = workspace.CartRideWorkspace.Objects.CartGiver.Hitbox.CFrame
-			local ts = game:GetService("TweenService")
 			local char = game.Players.LocalPlayer.Character
 			local part = char.HumanoidRootPart
-			local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
-			local tp = {CFrame = New_CFrame}
-			ts:Create(part, ti, tp):Play()
+
+			part.CFrame = New_CFrame  -- Anında ışınlanma
 		end
 		OrionLib:MakeNotification({
 			Name = "Title!",
@@ -77,10 +75,10 @@ end
 
 local Kick
 Kick = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...)
-if getnamecallmethod() == "Kick" then
-return
-end
-return Kick(Self, ...)
+	if getnamecallmethod() == "Kick" then
+		return
+	end
+	return Kick(Self, ...)
 end)
 
 OrionLib:Init()
