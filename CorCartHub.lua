@@ -52,13 +52,7 @@ Tab:AddButton({
 			end
 			return Kick(Self, ...)
 		end)
-		if game:IsLoaded() then
-			local New_CFrame = workspace.CartRideWorkspace.Objects.CartGiver.Hitbox.CFrame
-			local char = game.Players.LocalPlayer.Character
-			local part = char.HumanoidRootPart
-
-			part.CFrame = New_CFrame  -- Anında ışınlanma
-		end
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/anilenzo/Key/main/TpToCartGiver.lua"))()
 		OrionLib:MakeNotification({
 			Name = "Cart Giver!",
 			Content = "Nice, you got it right?",
