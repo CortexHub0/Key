@@ -19,7 +19,7 @@ Tab:AddToggle({
 		if Value then
 			YForce = -12000
 			KeyToReleaseRailMagnet = Enum.KeyCode.D
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Rylvns/EnvisionExploits/master/game-scripts/Create%20a%20Cart%20Ride!/source.lua"))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/anilenzo/Key/main/Magnetic%20Wheel.lua"))()
 			OrionLib:MakeNotification({
 				Name = "MW",
 				Content = "Magnetic wheels activated!",
@@ -29,7 +29,7 @@ Tab:AddToggle({
 		else
 			-- Toggle kapatıldığında yapılacak işlemler
 			OrionLib:MakeNotification({
-				Name = "Title!",
+				Name = "Magnetic Wheels",
 				Content = "Magnetic wheels deactivated!",
 				Image = "rbxassetid://4483345998",
 				Time = 5
