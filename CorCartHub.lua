@@ -60,7 +60,7 @@ Tab:AddButton({
 			part.CFrame = New_CFrame  -- Anında ışınlanma
 		end
 		OrionLib:MakeNotification({
-			Name = "Title!",
+			Name = "Cart Giver!",
 			Content = "Nice, you got it right?",
 			Image = "rbxassetid://4483345998",
 			Time = 5
